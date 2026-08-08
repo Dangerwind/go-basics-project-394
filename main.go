@@ -3,10 +3,13 @@ package main
 import "fmt"
 
 func main() {
-	// Проверка функции из условий задачи
-	fmt.Println(CheckPassword("abc"))         // Слабый пароль (оценка 1 из 5)
-	fmt.Println(CheckPassword("abcdefgh"))    // Слабый пароль (оценка 2 из 5)
-	fmt.Println(CheckPassword("abcdef1234"))  // Средний пароль (оценка 3 из 5)
-	fmt.Println(CheckPassword("Abcdef1234"))  // Надёжный пароль (оценка 4 из 5)
-	fmt.Println(CheckPassword("Abcdef123!")) 
+	fmt.Println("== Генерация паролей ==")
+	fmt.Println("буквы и цифры:   ", GeneratePassword(12, 123, true, true, false))
+	fmt.Println("со спецсимволами:", GeneratePassword(16, 7, true, true, true))
+
+	fmt.Println()
+	fmt.Println("== Проверка надёжности ==")
+	fmt.Println("abc        ->", CheckPassword("abc"))
+	fmt.Println("abcdef1234 ->", CheckPassword("abcdef1234"))
+	fmt.Println("Abcdef123! ->", CheckPassword("Abcdef123!"))
 }
