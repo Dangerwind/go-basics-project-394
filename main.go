@@ -3,5 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Работает!")
+	fmt.Println(GeneratePassword(5))
+	fmt.Println(GeneratePassword(30))
 }
